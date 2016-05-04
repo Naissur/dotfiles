@@ -27,6 +27,9 @@ highlight LineNr ctermfg=darkgrey
 nnoremap ( :tabprevious <CR>
 nnoremap ) :tabnext <CR>
 
+nnoremap [ :lprev <CR>
+nnoremap ] :lnext <CR>
+
 set nowritebackup
 
 let g:jsx_ext_required = 0

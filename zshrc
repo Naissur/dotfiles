@@ -111,6 +111,6 @@ bindkey '^r' history-incremental-search-backward
 # Globals
 export LFS=/mnt/lfs
 
-export NVM_DIR="/root/.nvm"
+export NVM_DIR=~/.nvm
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 

@@ -89,7 +89,7 @@ let g:syntastic_loc_list_height = 4
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_javascript_eslint_exec = 'eslint'
 let g:syntastic_typescript_checkers = ['tslint']
-let g:syntastic_javascript_eslint_exec = 'tslint'
+let g:syntastic_typescript_eslint_exec = 'tslint'
 
 
 highlight SyntasticError guibg=#2f0000

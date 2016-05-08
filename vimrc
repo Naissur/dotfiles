@@ -1,13 +1,26 @@
-colors peachpuff
+" No background highlight
 
-set relativenumber
+" setting encoding to utf - 8
+set encoding=utf-8  " The encoding displayed.
+set fileencoding=utf-8  " The encoding written to file.
 
+
+" backup & swap files
 set backupdir=~/.vim/backup//
 set directory=~/.vim/swp//
 
+set nowritebackup
 
-" for priority issues
 
+
+" relative line numbers
+set relativenumber
+
+autocmd InsertEnter * :set number
+autocmd InsertLeave * :set relativenumber
+
+
+" indenting
 set tabstop=2
 set shiftwidth=2
 set expandtab
@@ -15,71 +28,39 @@ set autoindent
 set softtabstop=2
 
 
-
-set so=6
-
-autocmd InsertEnter * :set number
-autocmd InsertLeave * :set relativenumber
-
-set hlsearch
-highlight LineNr ctermfg=darkgrey
-
-nnoremap ( :tabprevious <CR>
-nnoremap ) :tabnext <CR>
-
-nnoremap [ :lprev <CR>
-nnoremap ] :lnext <CR>
-
-set nowritebackup
-
-let g:jsx_ext_required = 0
-
-se nofoldenable
-
-set mouse=a
-map <ScrollWheelUp> <C-Y>
-map <ScrollWheelDown> <C-E>
-
+" remapping addition / subraction
 map + <C-a>
 map - <C-x>
 
 
+" highlight all search matches
+set hlsearch
+highlight LineNr ctermfg=darkgrey
 
 
-set nocompatible              " be iMproved, required
-filetype off                  " required
-
-" set the runtime path to include Vundle and initialize
-" set rtp+=~/.vim/bundle/Vundle.vim
-" call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
-
-" let Vundle manage Vundle, required
-" Plugin 'VundleVim/Vundle.vim'
-
-" Plugin 'stephenway/postcss.vim'
-
-" All of your Plugins must be added before the following line
-" call vundle#end()            " required
-
-filetype plugin indent on
-" filetype plugin on
+" switching tabs mapped to ()
+nnoremap ( :tabprevious <CR>
+nnoremap ) :tabnext <CR>
 
 
-execute pathogen#infect()
-
-" parenthesis for clojure
-au VimEnter * RainbowParenthesesToggle
-au Syntax * RainbowParenthesesLoadRound
-au Syntax * RainbowParenthesesLoadSquare
-au Syntax * RainbowParenthesesLoadBraces
+" going through syntastic errors mapped to []
+nnoremap [ :lprev <CR>
+nnoremap ] :lnext <CR>
 
 
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+" disable folding
+set nofoldenable
 
+
+" scrolling
+set so=6
+set mouse=a
+map <ScrollWheelUp> <C-Y>
+map <ScrollWheelDown> <C-E>
+
+
+
+" Synastic syntax checker
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
@@ -88,39 +69,92 @@ let g:syntastic_loc_list_height = 4
 
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_javascript_eslint_exec = 'eslint'
+
 let g:syntastic_typescript_checkers = ['tslint']
 let g:syntastic_typescript_eslint_exec = 'tslint'
 
+let g:jsx_ext_required = 0
 
 highlight SyntasticError guibg=#2f0000
 
 
+
+
+" Ctrl-P
 let g:ctrlp_root_markers = ['package.json', '.gitignore', 'README.md']
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+
 
 " VIM - ORG
 let g:org_heading_shade_leading_stars = -1
 let g:org_indent = 2
-" VIM - ORG
 
 let mapleader = ","
 let maplocalleader = ","
 
 set laststatus=2
 
+
+
+
+
+
+
+" =============================== "
+" ===========  VUNDLE =========== "
+" =============================== "
+
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.vim'
+
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'edkolev/tmuxline.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'flazz/vim-colorschemes'
+Plugin 'scrooloose/syntastic'
+
+call vundle#end()            " required
+
+filetype plugin indent on
+
+
+
+" colors
+colorscheme Tomorrow-Night
+highlight Normal ctermbg=NONE
+
+" repeat due to a strange active line color bug
+au VimEnter * colorscheme Tomorrow-Night
+au VimEnter * highlight Normal ctermbg=NONE
+au VimEnter * :AirlineRefresh
+
+
+
+
 " 256 terminal colors
 set t_Co=256
 
-" Fonts shit
+" vim-airline
 let g:airline_powerline_fonts = 1
 
-" if !exists('g:airline_symbols')
-"   let g:airline_symbols = {}
-" endif
-" 
-" let g:airline_symbols.space = "\ua0"
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+ 
+let g:airline_symbols.space = "\ua0"
 
 let g:airline_theme = 'wombat'
 let g:airline#extensions#whitespace#enabled = 0
 
-au VimEnter :Tmuxline airline_visual
+
+if strlen($TMUX) && executable('tmux')
+  au VimEnter * :Tmuxline airline_visual
+endif
+

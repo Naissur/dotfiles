@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-  export ZSH=/home/naissur/.oh-my-zsh
+  export ZSH=~/.oh-my-zsh
 
 
 CASE_SENSITIVE="true"

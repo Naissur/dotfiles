@@ -122,6 +122,7 @@ Plugin 'scrooloose/syntastic'
 Plugin 'jceb/vim-orgmode'
 Plugin 'tpope/vim-speeddating'
 Plugin 'honza/vim-snippets'
+Plugin 'airblade/vim-gitgutter'
 
 call vundle#end()            " required
 
@@ -137,6 +138,10 @@ highlight Normal ctermbg=NONE
 au VimEnter * colorscheme Tomorrow-Night
 au VimEnter * highlight Normal ctermbg=NONE
 au VimEnter * :AirlineRefresh
+
+"git-gutter no column highlight
+au VimEnter * let g:gitgutter_override_sign_column_highlight = 0
+au VimEnter * highlight SignColumn ctermbg=none    " terminal Vim
 
 
 

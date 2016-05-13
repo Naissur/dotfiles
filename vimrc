@@ -71,7 +71,6 @@ let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_javascript_eslint_exec = 'eslint'
 
 let g:syntastic_typescript_checkers = ['tslint']
-let g:syntastic_typescript_eslint_exec = 'tslint'
 
 let g:jsx_ext_required = 0
 
@@ -121,8 +120,13 @@ Plugin 'flazz/vim-colorschemes'
 Plugin 'scrooloose/syntastic'
 Plugin 'jceb/vim-orgmode'
 Plugin 'tpope/vim-speeddating'
-Plugin 'honza/vim-snippets'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'leafgarland/typescript-vim'
+
+" Snippets
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
 
 call vundle#end()            " required
 
@@ -165,4 +169,3 @@ let g:airline#extensions#whitespace#enabled = 0
 if strlen($TMUX) && executable('tmux')
   au VimEnter * :Tmuxline airline_visual
 endif
-

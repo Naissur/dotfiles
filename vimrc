@@ -20,6 +20,11 @@ autocmd InsertEnter * :set number
 autocmd InsertLeave * :set relativenumber
 
 
+" scroll through autocomplete with j and k
+inoremap <expr> j ((pumvisible())?("\<C-n>"):("j"))
+inoremap <expr> k ((pumvisible())?("\<C-p>"):("k"))
+
+
 " indenting
 set tabstop=2
 set shiftwidth=2
@@ -38,9 +43,11 @@ set hlsearch
 highlight LineNr ctermfg=darkgrey
 
 
-" switching tabs mapped to ()
-nnoremap ( :tabprevious <CR>
-nnoremap ) :tabnext <CR>
+" tabs
+nnoremap th  :tabfirst<CR>
+nnoremap tj  :tabnext<CR>
+nnoremap tk  :tabprev<CR>
+nnoremap tl  :tablast<CR>
 
 
 " going through syntastic errors mapped to []
@@ -112,21 +119,35 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 
+" Common
+Plugin 'scrooloose/syntastic'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'leafgarland/typescript-vim'
+Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-surround.git'
+
+" Visuals
+Plugin 'flazz/vim-colorschemes'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'edkolev/tmuxline.vim'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'flazz/vim-colorschemes'
-Plugin 'scrooloose/syntastic'
+
+" Org
 Plugin 'jceb/vim-orgmode'
 Plugin 'tpope/vim-speeddating'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'leafgarland/typescript-vim'
 
 " Snippets
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
+
+" Clojure
+Plugin 'guns/vim-sexp'
+Plugin 'tpope/vim-sexp-mappings-for-regular-people'
+Plugin 'kien/rainbow_parentheses.vim'
+Plugin 'tpope/vim-fireplace'                         " https://gist.github.com/malyn/646e291d01101dcc8b48 - patch for firwheel repl
+Plugin 'Deraen/vim-cider'
 
 call vundle#end()            " required
 
@@ -169,3 +190,11 @@ let g:airline#extensions#whitespace#enabled = 0
 if strlen($TMUX) && executable('tmux')
   au VimEnter * :Tmuxline airline_visual
 endif
+
+
+" rainbow parenthesis
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
+

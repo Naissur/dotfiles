@@ -33,6 +33,11 @@ set autoindent
 set softtabstop=2
 
 
+" moving words
+nnoremap <w daWBP
+nnoremap >w daWWP
+
+
 " remapping addition / subraction
 map + <C-a>
 map - <C-x>
@@ -51,8 +56,8 @@ nnoremap tl  :tablast<CR>
 
 
 " going through syntastic errors mapped to []
-nnoremap [ :lprev <CR>
-nnoremap ] :lnext <CR>
+nnoremap [ :lprev<CR>
+nnoremap ] :lnext<CR>
 
 
 " disable folding
@@ -65,6 +70,24 @@ set mouse=a
 map <ScrollWheelUp> <C-Y>
 map <ScrollWheelDown> <C-E>
 
+" Avoids updating the screen before commands are completed
+set lazyredraw
+
+" Remap navigation commands to center view on cursor using zz
+nnoremap <C-U> 8kzz
+nnoremap <C-D> 8jzz
+" map <C-H> 8kzz
+" map <C-L> 8jzz
+
+nnoremap <C-E> 1jzz
+nnoremap <C-Y> 1kzz
+
+" nnoremap j jzz
+" nnoremap k kzz
+" nnoremap # #zz
+" nnoremap * *zz
+nnoremap n nzz
+nnoremap N Nzz
 
 
 " Synastic syntax checker

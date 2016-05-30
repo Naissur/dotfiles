@@ -155,13 +155,15 @@ snippet time
 snippet rcompc
 	import * as React from 'react';
 
-	interface ${1:Name}PropTypes {
+	interface I${1:Name}PropTypes {
 	}
 
-	export default class $1 extends React.Component<$1PropTypes, any> {
+	export default class $1 extends React.Component<I$1PropTypes, any> {
 		render() {
 			return (
 				${2:<div/>}
 			);
 		}
 	}
+snippet imp
+	import ${1} from '${2}';

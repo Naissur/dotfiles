@@ -114,6 +114,10 @@ let g:ctrlp_root_markers = ['package.json', '.gitignore', 'README.md']
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 
 
+" NERDTree
+map <C-n> :NERDTreeToggle<CR>
+
+
 " VIM - ORG
 let g:org_heading_shade_leading_stars = -1
 let g:org_indent = 2
@@ -143,6 +147,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 " Common
+Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'airblade/vim-gitgutter'

@@ -43,7 +43,7 @@ map - <C-x>
 
 " highlight all search matches
 set hlsearch
-highlight LineNr ctermfg=darkgrey
+hi LineNr ctermfg=darkgrey
 
 
 " tabs
@@ -80,28 +80,6 @@ nnoremap <C-Y> 1kzz
 
 nnoremap n nzz
 nnoremap N Nzz
-
-
-
-" toggling status display
-let s:hidden_all = 0
-function! ToggleHiddenAll()
-    if s:hidden_all  == 0
-        let s:hidden_all = 1
-        set noshowmode
-        set noruler
-        set laststatus=0
-        set noshowcmd
-    else
-        let s:hidden_all = 0
-        set showmode
-        set ruler
-        set laststatus=2
-        set showcmd
-    endif
-endfunction
-
-nnoremap <C-h> :call ToggleHiddenAll()<CR>
 
 
 " Synastic
@@ -176,6 +154,7 @@ Plugin 'vim-airline/vim-airline-themes'
 " Plugin 'edkolev/tmuxline.vim'
 Plugin 'othree/yajs.vim'
 Plugin 'morhetz/gruvbox'
+Plugin 'bilalq/lite-dfm'
 
 " Org
 Plugin 'jceb/vim-orgmode'
@@ -197,7 +176,8 @@ call vundle#end()            " required
 
 filetype plugin indent on
 
-
+" Lite mode
+nnoremap <Leader>z :LiteDFMToggle<CR>i<Esc>
 
 " colors
 " 256 terminal colors
@@ -212,11 +192,16 @@ highlight Normal ctermbg=NONE
 au VimEnter * :AirlineTheme gruvbox
 au VimEnter * :AirlineRefresh
 
-"git-gutter no column highlight
+" git-gutter no column highlight
 au VimEnter * let g:gitgutter_override_sign_column_highlight = 0
 au VimEnter * highlight SignColumn ctermbg=none    " terminal Vim
 
+" no current line highlight
+hi CursorLineNr none
 
+" lite-dfm
+let g:lite_dfm_normal_bg_cterm = 234
+let g:lite_dfm_normal_bg_gui = '#abcabc'
 
 
 " vim-airline
@@ -238,7 +223,4 @@ au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
-
-" hide statusline on start
-au VimEnter * call ToggleHiddenAll()
 

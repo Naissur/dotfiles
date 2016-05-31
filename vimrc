@@ -1,5 +1,3 @@
-" No background highlight
-
 " setting encoding to utf - 8
 set encoding=utf-8  " The encoding displayed.
 set fileencoding=utf-8  " The encoding written to file.
@@ -70,27 +68,43 @@ set mouse=a
 map <ScrollWheelUp> <C-Y>
 map <ScrollWheelDown> <C-E>
 
-" Avoids updating the screen before commands are completed
+" avoid updating the screen before commands are completed
 set lazyredraw
 
-" Remap navigation commands to center view on cursor using zz
+" remap navigation commands to center view on cursor using zz
 nnoremap <C-U> 8kzz
 nnoremap <C-D> 8jzz
-" map <C-H> 8kzz
-" map <C-L> 8jzz
 
 nnoremap <C-E> 1jzz
 nnoremap <C-Y> 1kzz
 
-" nnoremap j jzz
-" nnoremap k kzz
-" nnoremap # #zz
-" nnoremap * *zz
 nnoremap n nzz
 nnoremap N Nzz
 
 
-" Synastic syntax checker
+
+" toggling status display
+let s:hidden_all = 0
+function! ToggleHiddenAll()
+    if s:hidden_all  == 0
+        let s:hidden_all = 1
+        set noshowmode
+        set noruler
+        set laststatus=0
+        set noshowcmd
+    else
+        let s:hidden_all = 0
+        set showmode
+        set ruler
+        set laststatus=2
+        set showcmd
+    endif
+endfunction
+
+nnoremap <C-h> :call ToggleHiddenAll()<CR>
+
+
+" Synastic
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
@@ -159,7 +173,9 @@ Plugin 'tpope/vim-surround.git'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-Plugin 'edkolev/tmuxline.vim'
+" Plugin 'edkolev/tmuxline.vim'
+Plugin 'othree/yajs.vim'
+Plugin 'morhetz/gruvbox'
 
 " Org
 Plugin 'jceb/vim-orgmode'
@@ -184,12 +200,16 @@ filetype plugin indent on
 
 
 " colors
-colorscheme Tomorrow-Night
+" 256 terminal colors
+set t_Co=256
+
+set background=dark
+let g:gruvbox_invert_selection=0
+
+silent colorscheme gruvbox
 highlight Normal ctermbg=NONE
 
-" repeat due to a strange active line color bug
-au VimEnter * colorscheme Tomorrow-Night
-au VimEnter * highlight Normal ctermbg=NONE
+au VimEnter * :AirlineTheme gruvbox
 au VimEnter * :AirlineRefresh
 
 "git-gutter no column highlight
@@ -198,9 +218,6 @@ au VimEnter * highlight SignColumn ctermbg=none    " terminal Vim
 
 
 
-
-" 256 terminal colors
-set t_Co=256
 
 " vim-airline
 let g:airline_powerline_fonts = 1
@@ -215,14 +232,13 @@ let g:airline_theme = 'wombat'
 let g:airline#extensions#whitespace#enabled = 0
 
 
-if strlen($TMUX) && executable('tmux')
-  au VimEnter * :Tmuxline airline_visual
-endif
-
 
 " rainbow parenthesis
 au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
+
+" hide statusline on start
+au VimEnter * call ToggleHiddenAll()
 

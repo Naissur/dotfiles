@@ -178,6 +178,7 @@ filetype plugin indent on
 
 " Lite mode
 nnoremap <Leader>z :LiteDFMToggle<CR>i<Esc>
+au VimEnter * :LiteDFMToggle
 
 " colors
 " 256 terminal colors

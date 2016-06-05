@@ -78,6 +78,8 @@ nnoremap <C-D> 8jzz
 nnoremap <C-E> 1jzz
 nnoremap <C-Y> 1kzz
 
+nnoremap '' ''zz
+
 nnoremap n nzz
 nnoremap N Nzz
 

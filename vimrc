@@ -107,7 +107,11 @@ let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclu
 
 
 " NERDTree
-map <C-n> :NERDTreeToggle<CR>
+" map <C-n> :NERDTreeToggle<CR>
+map <C-n> :Explore<CR>
+
+" Explorer
+let g:netrw_liststyle=3
 
 
 " VIM - ORG
@@ -139,7 +143,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 " Common
-Plugin 'scrooloose/nerdtree'
+" Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'airblade/vim-gitgutter'

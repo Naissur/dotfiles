@@ -46,12 +46,6 @@ set hlsearch
 hi LineNr ctermfg=darkgrey
 
 
-" tabs
-nnoremap th  :tabfirst<CR>
-nnoremap tj  :tabnext<CR>
-nnoremap tk  :tabprev<CR>
-nnoremap tl  :tablast<CR>
-
 
 " going through syntastic errors mapped to []
 nnoremap [ :lprev<CR>
@@ -106,13 +100,60 @@ highlight SyntasticError guibg=#2f0000
 " Ctrl-P
 let g:ctrlp_root_markers = ['package.json', '.gitignore', 'README.md']
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+let g:ctrlp_open_new_file = 'r'
 
 
-" NERDTree
-" map <C-n> :NERDTreeToggle<CR>
-map <C-n> :Explore<CR>
+
+
+" ==================================== "
+" ==========  Buffergator ============ "
+" ==================================== "
+
+" Enable the list of buffers in airline
+" let g:airline#extensions#tabline#enabled = 1
+
+" just show the filename
+" let g:airline#extensions#tabline#fnamemod = ':t'
+
+
+" Use the right side of the screen
+let g:buffergator_viewport_split_policy = 'R'
+
+" I want my own keymappings...
+let g:buffergator_suppress_keymaps = 1
+
+" Looper buffers
+"let g:buffergator_mru_cycle_loop = 1
+
+nmap bk :BuffergatorMruCyclePrev<cr>
+nmap bj :BuffergatorMruCycleNext<cr>
+nmap <C-b> :BuffergatorToggle<cr>
+
+nmap bn :enew<cr>
+nmap bq :bp <BAR> bd #<cr>
+
+
+" tabs mappings for switching layouts
+
+nnoremap tn  :tabnew<CR>
+nnoremap tj  :tabnext<CR>
+nnoremap tk  :tabprev<CR>
+nnoremap tq  :tabclose<CR>
+
+" splits mappings
+
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+" ==================================== "
+" =========  / Buffergator =========== "
+" ==================================== "
+
 
 " Explorer
+map <C-n> :Explore<CR>
 let g:netrw_liststyle=3
 
 
@@ -145,13 +186,13 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 " Common
-" Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround.git'
+Plugin 'jeetsukumaran/vim-buffergator'
 
 " Visuals
 Plugin 'flazz/vim-colorschemes'

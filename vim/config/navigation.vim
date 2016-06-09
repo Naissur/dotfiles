@@ -6,17 +6,19 @@ nnoremap tk  :tabprev<CR>
 nnoremap tq  :tabclose<CR>
 
 " splits
-set winheight=30
-set winminheight=5
+set winheight=20
+set winminheight=3
+set winminwidth=20
 
 set splitbelow
 set splitright
 
-nnoremap <leader> + :exe "resize " . (winheight(0) * 3/2)<CR>
-nnoremap <leader> - :exe "resize " . (winheight(0) * 2/3)<CR>
+map + <C-W>+
+map - <C-W>-
 
-" open a new split and switch over to it
-nnoremap <leader>w <C-w>s<C-w>k
+" open a new split
+" nnoremap <leader>w <C-w>s
+" nnoremap <leader>W <C-w>v
 
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>

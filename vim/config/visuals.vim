@@ -2,45 +2,47 @@
 " 256 terminal colors
 set t_Co=256
 
+set number
+set numberwidth=10
+set foldcolumn=12
+
+" colorscheme
+set background=dark
+let g:gruvbox_invert_selection=0
+
+silent colorscheme Tomorrow-Night
+highlight Normal ctermbg=none
+
+au VimEnter * :AirlineTheme base16_grayscale
+au VimEnter * :AirlineRefresh
+
+
+au VimEnter * hi FoldColumn  ctermbg=black   ctermfg=black
+" au VimEnter * highlight Folded      ctermbg=darkgrey
+au VimEnter * hi LineNr      ctermbg=black   ctermfg=black
+" au VimEnter * highlight LineNr term=bold cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
+
+
+" tabs bar
+au VimEnter * hi TabLine cterm=none ctermbg=235 ctermfg=239
+au VimEnter * hi TabLineFill cterm=none ctermbg=235 ctermfg=239
+au VimEnter * hi TabLineSel cterm=none ctermbg=235 ctermfg=248
+
+
+" no current line highlight
+hi CursorLineNr none
+
 
 " mark whitespace
 set list
 set listchars=tab:>.,trail:.,extends:#,nbsp:.
 
 
-" relative line numbers
-set relativenumber
-
-autocmd InsertEnter * :set number
-autocmd InsertLeave * :set relativenumber
-
 
 " highlight all search matches
 set hlsearch
 hi LineNr ctermfg=darkgrey
 
-
-" colorscheme
-set background=dark
-let g:gruvbox_invert_selection=0
-
-silent colorscheme gruvbox
-highlight Normal ctermbg=NONE
-
-au VimEnter * :AirlineTheme gruvbox
-au VimEnter * :AirlineRefresh
-
-" git-gutter no column highlight
-au VimEnter * let g:gitgutter_override_sign_column_highlight = 0
-au VimEnter * highlight SignColumn ctermbg=none    " terminal Vim
-
-" no current line highlight
-hi CursorLineNr none
-
-
-" lite-dfm
-let g:lite_dfm_normal_bg_cterm = 234
-let g:lite_dfm_normal_bg_gui = '#abcabc'
 
 
 " vim-airline

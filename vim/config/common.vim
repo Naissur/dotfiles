@@ -2,8 +2,10 @@
 set encoding=utf-8  " The encoding displayed.
 set fileencoding=utf-8  " The encoding written to file.
 
-" remap : to ;
-nnoremap ; :
+
+" search
+set incsearch
+set hlsearch
 
 " leader
 let mapleader = ","
@@ -29,8 +31,8 @@ nnoremap >w daWWP
 
 
 " remapping addition / subraction
-map + <C-a>
-map - <C-x>
+" map + <C-a>
+" map - <C-x>
 
 
 " going through syntastic errors mapped to []
@@ -62,8 +64,8 @@ set lazyredraw
 nnoremap <C-U> 8kzz
 nnoremap <C-D> 8jzz
 
-nnoremap <C-E> 1jzz
-nnoremap <C-Y> 1kzz
+" nnoremap <C-E> 1jzz
+" nnoremap <C-Y> 1kzz
 
 nnoremap '' ''zz
 

@@ -13,23 +13,21 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 " Common
-Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'leafgarland/typescript-vim'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround.git'
+
+" Layout and navigation
 Plugin 'jeetsukumaran/vim-buffergator'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'szw/vim-maximizer'
+Plugin 'scrooloose/nerdtree'
 
 " Visuals
 Plugin 'flazz/vim-colorschemes'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-" Plugin 'edkolev/tmuxline.vim'
-Plugin 'othree/yajs.vim'
 Plugin 'morhetz/gruvbox'
-Plugin 'bilalq/lite-dfm'
 
 " Org
 Plugin 'jceb/vim-orgmode'
@@ -39,6 +37,10 @@ Plugin 'tpope/vim-speeddating'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
+
+" Syntax
+Plugin 'othree/yajs.vim'
+Plugin 'leafgarland/typescript-vim'
 
 " Clojure
 Plugin 'guns/vim-sexp'
@@ -51,9 +53,9 @@ call vundle#end()            " required
 
 filetype plugin indent on
 
-
-
-
+" Maximizer
+let g:maximizer_set_default_mapping = 0
+nnoremap <C-W><C-Z> :MaximizerToggle<CR>
 
 
 " Synastic
@@ -83,10 +85,6 @@ let g:ctrlp_reuse_window  = 'startify'
 
 
 
-
-" Lite mode
-nnoremap <Leader>z :LiteDFMToggle<CR>i<Esc>
-au VimEnter * :LiteDFMToggle
 
 
 " NERDTree

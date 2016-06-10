@@ -11,10 +11,7 @@ set background=dark
 let g:gruvbox_invert_selection=0
 
 silent colorscheme Tomorrow-Night
-highlight Normal ctermbg=none
-
-au VimEnter * :AirlineTheme base16_grayscale
-au VimEnter * :AirlineRefresh
+highlight Normal ctermbg=black
 
 
 au VimEnter * hi FoldColumn  ctermbg=black   ctermfg=black
@@ -52,9 +49,13 @@ if !exists('g:airline_symbols')
   let g:airline_symbols = {}
 endif
 
+" remove useles info
+let g:airline_section_y = ''
+let g:airline_section_z = '%L-%c'
+
 let g:airline_symbols.space = "\ua0"
 
-let g:airline_theme = 'wombat'
+let g:airline_theme = 'base16_grayscale'
 let g:airline#extensions#whitespace#enabled = 0
 
 

@@ -98,15 +98,18 @@ let g:org_indent = 2
 set laststatus=2
 
 
-" ==================================== "
-" ==========  Buffergator ============ "
-" ==================================== "
 
+" Airline 
 " Enable the list of buffers in airline
 " let g:airline#extensions#tabline#enabled = 1
 
 " just show the filename
 " let g:airline#extensions#tabline#fnamemod = ':t'
+
+
+" ==================================== "
+" ==========  Buffergator ============ "
+" ==================================== "
 
 set hidden
 

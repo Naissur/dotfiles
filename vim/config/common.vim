@@ -16,6 +16,8 @@ let maplocalleader = ","
 set nobackup
 set noswapfile
 
+" large history
+set history=1000
 
 " indenting
 set tabstop=2

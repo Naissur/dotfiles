@@ -25,8 +25,8 @@ Plugin 'scrooloose/nerdtree'
 
 " Visuals
 Plugin 'flazz/vim-colorschemes'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
+" Plugin 'vim-airline/vim-airline'
+" Plugin 'vim-airline/vim-airline-themes'
 Plugin 'morhetz/gruvbox'
 
 " Org
@@ -97,14 +97,6 @@ let g:org_indent = 2
 
 set laststatus=2
 
-
-
-" Airline 
-" Enable the list of buffers in airline
-" let g:airline#extensions#tabline#enabled = 1
-
-" just show the filename
-" let g:airline#extensions#tabline#fnamemod = ':t'
 
 
 " ==================================== "

@@ -20,12 +20,6 @@ au VimEnter * hi LineNr      ctermbg=black   ctermfg=black
 " au VimEnter * highlight LineNr term=bold cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
 
 
-" tabs bar
-au VimEnter * hi TabLine cterm=none ctermbg=235 ctermfg=239
-au VimEnter * hi TabLineFill cterm=none ctermbg=235 ctermfg=239
-au VimEnter * hi TabLineSel cterm=none ctermbg=235 ctermfg=248
-
-
 " no current line highlight
 hi CursorLineNr none
 

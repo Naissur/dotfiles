@@ -74,3 +74,6 @@ nnoremap '' ''zz
 nnoremap n nzz
 nnoremap N Nzz
 
+
+source ~/.vim/config/status.vim
+

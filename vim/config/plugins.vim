@@ -18,10 +18,11 @@ Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround.git'
 
 " Layout and navigation
-Plugin 'jeetsukumaran/vim-buffergator'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'szw/vim-maximizer'
 Plugin 'scrooloose/nerdtree'
+
+Plugin 'mihaifm/bufstop'
 
 " Visuals
 Plugin 'flazz/vim-colorschemes'
@@ -99,34 +100,8 @@ set laststatus=2
 
 
 
-" ==================================== "
-" ==========  Buffergator ============ "
-" ==================================== "
-
 set hidden
 
-" Use the right side of the screen
-let g:buffergator_viewport_split_policy = 'R'
-let g:buffergator_hsplit_size=80
-let g:buffergator_split_size=80
-
-
-" I want my own keymappings...
-let g:buffergator_suppress_keymaps = 1
-
-" Looper buffers
-let g:buffergator_mru_cycle_loop = 1
-
-" nmap <localleader>bk :BuffergatorMruCyclePrev<cr>
-" nmap <localleader>bj :BuffergatorMruCycleNext<cr>
-nmap <C-b> :BuffergatorToggle<cr>
+nmap <C-b> :BufstopFast<cr>
 
 nmap <localleader>bn :enew<cr>
-" nmap <localleader>bq :bp <BAR> bd #<cr>
-
-" ==================================== "
-" =========  / Buffergator =========== "
-" ==================================== "
-
-
-

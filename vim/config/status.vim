@@ -1,6 +1,6 @@
 au VimEnter * hi TabLine cterm=none ctermbg=235 ctermfg=239
 au VimEnter * hi TabLineFill cterm=none ctermbg=235 ctermfg=239
-au VimEnter * hi TabLineSel cterm=none ctermbg=235 ctermfg=248
+au VimEnter * hi TabLineSel cterm=none ctermbg=237 ctermfg=250
 
 au VimEnter * hi StatusLine cterm=none ctermbg=237 ctermfg=250
 au VimEnter * hi StatusLineNC cterm=none ctermbg=235 ctermfg=242

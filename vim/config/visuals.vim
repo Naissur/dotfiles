@@ -36,24 +36,6 @@ hi LineNr ctermfg=darkgrey
 
 
 
-" vim-airline
-let g:airline_powerline_fonts = 1
-
-if !exists('g:airline_symbols')
-  let g:airline_symbols = {}
-endif
-
-" remove useles info
-let g:airline_section_y = ''
-let g:airline_section_z = '%L-%c'
-
-let g:airline_symbols.space = "\ua0"
-
-let g:airline_theme = 'base16_grayscale'
-let g:airline#extensions#whitespace#enabled = 0
-
-
-
 " rainbow parenthesis
 au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound

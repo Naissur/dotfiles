@@ -1,3 +1,7 @@
+" marks
+map ' `
+map '' ``
+
 " tabs mappings for switching layouts
 
 nnoremap tn  :tabnew<CR>

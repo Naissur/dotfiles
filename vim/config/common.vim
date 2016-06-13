@@ -63,8 +63,8 @@ set lazyredraw
 
 
 " remap navigation commands to center view on cursor using zz
-nnoremap <C-U> 8kzz
-nnoremap <C-D> 8jzz
+map <C-U> 8kzz
+map <C-D> 8jzz
 
 " nnoremap <C-E> 1jzz
 " nnoremap <C-Y> 1kzz

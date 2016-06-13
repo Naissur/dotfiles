@@ -3,14 +3,16 @@ set encoding=utf-8  " The encoding displayed.
 set fileencoding=utf-8  " The encoding written to file.
 
 
-" search
-set incsearch
-set hlsearch
-
 " leader
 let mapleader = ","
 let maplocalleader = ","
 
+
+" search
+set incsearch
+set hlsearch
+
+map <localleader>/ :let @/ = ""<CR>
 
 " disable backup & swap files
 set nobackup

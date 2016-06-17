@@ -21,13 +21,10 @@ Plugin 'tpope/vim-surround.git'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'szw/vim-maximizer'
 Plugin 'scrooloose/nerdtree'
-
 Plugin 'mihaifm/bufstop'
 
 " Visuals
 Plugin 'flazz/vim-colorschemes'
-" Plugin 'vim-airline/vim-airline'
-" Plugin 'vim-airline/vim-airline-themes'
 Plugin 'morhetz/gruvbox'
 
 " Org
@@ -89,7 +86,7 @@ let g:ctrlp_reuse_window  = 'startify'
 
 
 " NERDTree
-map <C-n> :NERDTreeToggle<CR>
+nnoremap <C-n> :NERDTreeToggle<CR>
 
 
 " VIM - ORG

@@ -2,24 +2,39 @@
 set encoding=utf-8  " The encoding displayed.
 set fileencoding=utf-8  " The encoding written to file.
 
-
 " leader
 let mapleader = ","
 let maplocalleader = ","
 
+" do NOT move back after leaving insert mode
+inoremap <silent> <Esc> <Esc>`^
+
+" add extensions to opening files at cursor
+set suffixesadd+=.js,.ts,.tsx
 
 " search
 set incsearch
 set hlsearch
 
-map <localleader>/ :let @/ = ""<CR>
+" reset search results
+nnoremap <localleader>/ :let @/ = ""<CR>
+
+" Set to auto read when a file is changed from the outside
+set autoread
+
+" :W sudo saves the file 
+" (useful for handling the permission-denied error)
+command W w !sudo tee % > /dev/null
+
 
 " disable backup & swap files
 set nobackup
 set noswapfile
 
+
 " large history
 set history=1000
+
 
 " indenting
 set tabstop=2
@@ -29,17 +44,12 @@ set autoindent
 set softtabstop=2
 
 
-" moving words
-nnoremap <w daWBP
-nnoremap >w daWWP
-
-
 " remapping addition / subraction
 " map + <C-a>
 " map - <C-x>
 
 
-" going through syntastic errors mapped to []
+" going through quickfix errors mapped to []
 nnoremap [ :lprev<CR>
 nnoremap ] :lnext<CR>
 

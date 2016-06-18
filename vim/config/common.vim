@@ -2,6 +2,16 @@
 set encoding=utf-8  " The encoding displayed.
 set fileencoding=utf-8  " The encoding written to file.
 
+" remove startup message
+set shortmess+=I
+
+" swap line-wise and visual-line-wise motions
+nnoremap j gj
+nnoremap k gk
+
+nnoremap gj j
+nnoremap gk k
+
 " leader
 let mapleader = ","
 let maplocalleader = ","
@@ -15,6 +25,9 @@ set suffixesadd+=.js,.ts,.tsx
 " search
 set incsearch
 set hlsearch
+
+" fix jumping cursor when joining lines
+nnoremap J mzJ`z
 
 " reset search results
 nnoremap <localleader>/ :let @/ = ""<CR>

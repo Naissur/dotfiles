@@ -14,4 +14,4 @@ set statusline+=\ %m                                  " Modified ?
 set statusline+=\ %r                                  " Read-only ?
 set statusline+=\ %f                                  " Path to the file
 set statusline+=%=                                    " Switch to the right side
-set statusline+=%l/%L\                                " lines count
+set statusline+=%l/%L:%c\                             " [lines]/[total lines]:[columns]

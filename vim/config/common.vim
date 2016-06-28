@@ -1,3 +1,6 @@
+" be iMproved, required
+set nocompatible
+
 " setting encoding to utf - 8
 set encoding=utf-8  " The encoding displayed.
 set fileencoding=utf-8  " The encoding written to file.
@@ -11,6 +14,9 @@ nnoremap k gk
 
 nnoremap gj j
 nnoremap gk k
+
+" make Y behave like C and D
+nnoremap Y y$
 
 " leader
 let mapleader = ","

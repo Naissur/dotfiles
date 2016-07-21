@@ -8,6 +8,9 @@ set fileencoding=utf-8  " The encoding written to file.
 " remove startup message
 set shortmess+=I
 
+" do NOT move back after leaving insert mode
+inoremap <silent> <Esc> <Esc>`^
+
 " swap line-wise and visual-line-wise motions
 nnoremap j gj
 nnoremap k gk
@@ -22,9 +25,6 @@ nnoremap Y y$
 let mapleader = ","
 let maplocalleader = ","
 
-" do NOT move back after leaving insert mode
-inoremap <silent> <Esc> <Esc>`^
-
 " add extensions to opening files at cursor
 set suffixesadd+=.js,.ts,.tsx
 
@@ -36,7 +36,7 @@ set hlsearch
 nnoremap J mzJ`z
 
 " reset search results
-nnoremap <localleader>/ :let @/ = ""<CR>
+nnoremap <silent> <localleader>/ :let @/ = ""<CR>
 
 " Set to auto read when a file is changed from the outside
 set autoread
@@ -68,11 +68,6 @@ set softtabstop=2
 " map - <C-x>
 
 
-" going through quickfix errors mapped to []
-nnoremap [ :lprev<CR>
-nnoremap ] :lnext<CR>
-
-
 " disable folding
 set nofoldenable
 
@@ -82,11 +77,6 @@ set so=6
 set mouse=a
 map <ScrollWheelUp> <C-Y>
 map <ScrollWheelDown> <C-E>
-
-
-" scroll through autocomplete with j and k
-inoremap <expr> j ((pumvisible())?("\<C-n>"):("j"))
-inoremap <expr> k ((pumvisible())?("\<C-p>"):("k"))
 
 
 " avoid updating the screen before commands are completed

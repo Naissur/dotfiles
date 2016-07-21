@@ -15,6 +15,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround.git'
+Plugin 'michaeljsmith/vim-indent-object'
 
 " Layout and navigation
 Plugin 'ctrlpvim/ctrlp.vim'
@@ -89,7 +90,7 @@ nnoremap <C-n> :NERDTreeToggle<CR>
 
 
 " VIM - ORG
-let g:org_heading_shade_leading_stars = -1
+let g:org_heading_shade_leading_stars = 1
 let g:org_indent = 2
 
 set laststatus=2

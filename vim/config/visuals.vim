@@ -7,6 +7,7 @@ set numberwidth=10
 set foldcolumn=12
 
 " colorscheme
+hi LineNr ctermfg=darkgrey
 set background=dark
 let g:gruvbox_invert_selection=0
 
@@ -18,22 +19,6 @@ au VimEnter * hi FoldColumn  ctermbg=black   ctermfg=black
 " au VimEnter * highlight Folded      ctermbg=darkgrey
 au VimEnter * hi LineNr      ctermbg=black   ctermfg=black
 " au VimEnter * highlight LineNr term=bold cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
-
-
-" no current line highlight
-hi CursorLineNr none
-
-
-" mark whitespace
-set list
-set listchars=tab:>.,trail:.,extends:#,nbsp:.
-
-
-
-" highlight all search matches
-set hlsearch
-hi LineNr ctermfg=darkgrey
-
 
 
 " rainbow parenthesis

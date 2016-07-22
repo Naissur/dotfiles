@@ -28,6 +28,15 @@ let maplocalleader = ","
 " add extensions to opening files at cursor
 set suffixesadd+=.js,.ts,.tsx
 
+" no current line highlight
+hi CursorLineNr none
+
+
+" mark whitespace
+set list
+set listchars=tab:>.,trail:.,extends:#,nbsp:.
+
+
 " search
 set incsearch
 set hlsearch

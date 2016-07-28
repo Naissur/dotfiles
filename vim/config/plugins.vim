@@ -86,7 +86,7 @@ let g:ctrlp_reuse_window  = 'startify'
 
 
 " NERDTree
-nnoremap <C-n> :NERDTreeToggle<CR>
+nnoremap <C-n> :NERDTreeFind<CR>
 
 
 " VIM - ORG

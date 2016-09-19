@@ -12,11 +12,11 @@ set shortmess+=I
 inoremap <silent> <Esc> <Esc>`^
 
 " swap line-wise and visual-line-wise motions
-nnoremap j gj
-nnoremap k gk
+noremap j gj
+noremap k gk
 
-nnoremap gj j
-nnoremap gk k
+noremap gj j
+noremap gk k
 
 " make Y behave like C and D
 nnoremap Y y$
@@ -28,6 +28,9 @@ let maplocalleader = ","
 " add extensions to opening files at cursor
 set suffixesadd+=.js,.ts,.tsx
 
+" wildmenu
+set wildmenu
+
 " no current line highlight
 hi CursorLineNr none
 
@@ -35,6 +38,9 @@ hi CursorLineNr none
 " mark whitespace
 set list
 set listchars=tab:>.,trail:.,extends:#,nbsp:.
+
+" toggle paste on F10
+map <F10> :set invpaste<CR>
 
 
 " search
@@ -53,6 +59,10 @@ set autoread
 " :W sudo saves the file 
 " (useful for handling the permission-denied error)
 command W w !sudo tee % > /dev/null
+
+
+" gp selects pasted text
+nnoremap <expr> gp '`[' . strpart(getregtype(), 0, 1) . '`]'
 
 
 " disable backup & swap files
@@ -103,6 +113,18 @@ nnoremap '' ''zz
 
 nnoremap n nzz
 nnoremap N Nzz
+
+" Search for selected text, forwards or backwards.
+vnoremap <silent> * :<C-U>
+  \let old_reg=getreg('"')<Bar>let old_regtype=getregtype('"')<CR>
+  \gvy/<C-R><C-R>=substitute(
+  \escape(@", '/\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
+  \gV:call setreg('"', old_reg, old_regtype)<CR>
+vnoremap <silent> # :<C-U>
+  \let old_reg=getreg('"')<Bar>let old_regtype=getregtype('"')<CR>
+  \gvy?<C-R><C-R>=substitute(
+  \escape(@", '?\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
+  \gV:call setreg('"', old_reg, old_regtype)<CR>
 
 
 source ~/.vim/config/status.vim

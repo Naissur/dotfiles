@@ -19,9 +19,11 @@ Plugin 'michaeljsmith/vim-indent-object'
 
 " Layout and navigation
 Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'troydm/easybuffer.vim'
 Plugin 'szw/vim-maximizer'
 Plugin 'scrooloose/nerdtree'
-Plugin 'mihaifm/bufstop'
+Plugin 'airblade/vim-gitgutter'
+" Plugin 'mihaifm/bufstop'
 
 " Visuals
 Plugin 'flazz/vim-colorschemes'
@@ -56,6 +58,12 @@ let g:maximizer_set_default_mapping = 0
 nnoremap <C-W><C-Z> :MaximizerToggle<CR>
 
 
+" EasyBuffer
+let g:easybuffer_chars = ['a','o','e','u','i','d','h','t','n','s']
+let g:easybuffer_toggle_position = "HorizontalBelow"
+nnoremap <C-b> :EasyBufferToggle<CR>
+
+
 " Synastic
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
@@ -68,6 +76,8 @@ let g:syntastic_javascript_eslint_exec = 'eslint'
 
 let g:syntastic_typescript_checkers = ['tslint']
 
+let g:syntastic_debug_file = "~/syntastic.log"
+
 let g:jsx_ext_required = 0
 
 highlight SyntasticError guibg=#2f0000
@@ -77,7 +87,7 @@ highlight SyntasticError guibg=#2f0000
 
 " Ctrl-P
 let g:ctrlp_root_markers = ['package.json', '.gitignore', 'README.md']
-let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard', 'find %s -type f']
 " let g:ctrlp_open_new_file = 'r'
 let g:ctrlp_reuse_window  = 'startify'
 
@@ -99,7 +109,7 @@ set laststatus=2
 
 set hidden
 
-nmap <C-b> :BufstopFast<cr>
+" nmap <C-b> :BufstopFast<cr>
 
 nmap <localleader>bn :enew<cr>
 

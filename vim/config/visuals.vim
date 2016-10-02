@@ -2,22 +2,23 @@
 " 256 terminal colors
 set t_Co=256
 
-set number
+set relativenumber
 set numberwidth=10
 set foldcolumn=12
 
 " colorscheme
-hi LineNr ctermfg=darkgrey
 set background=dark
-let g:gruvbox_invert_selection=0
 
-silent colorscheme Tomorrow-Night
-highlight Normal ctermbg=black
+colorscheme monokai-chris
 
+highlight Normal ctermbg=NONE
+highlight nonText ctermbg=NONE
+highlight FoldColumn  ctermbg=NONE   ctermfg=NONE
+highlight LineNr cterm=none ctermbg=NONE   ctermfg=237
+highlight Search      cterm=inverse     ctermbg=none   ctermfg=11
 
-au VimEnter * hi FoldColumn  ctermbg=black   ctermfg=black
+" hi Normal term=none ctermbg=black ctermfg=231 guifg=#FFFFFF guibg=black
 " au VimEnter * highlight Folded      ctermbg=darkgrey
-au VimEnter * hi LineNr      ctermbg=black   ctermfg=black
 " au VimEnter * highlight LineNr term=bold cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
 
 

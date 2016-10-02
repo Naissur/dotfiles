@@ -26,7 +26,6 @@ Plugin 'airblade/vim-gitgutter'
 
 " Visuals
 Plugin 'flazz/vim-colorschemes'
-Plugin 'morhetz/gruvbox'
 
 " Org
 Plugin 'jceb/vim-orgmode'
@@ -39,6 +38,7 @@ Plugin 'garbas/vim-snipmate'
 
 " Syntax
 Plugin 'othree/yajs.vim'
+Plugin 'mxw/vim-jsx'
 Plugin 'leafgarland/typescript-vim'
 
 " Clojure

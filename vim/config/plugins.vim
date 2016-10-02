@@ -19,7 +19,6 @@ Plugin 'michaeljsmith/vim-indent-object'
 
 " Layout and navigation
 Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'troydm/easybuffer.vim'
 Plugin 'szw/vim-maximizer'
 Plugin 'scrooloose/nerdtree'
 Plugin 'airblade/vim-gitgutter'
@@ -56,12 +55,6 @@ filetype plugin indent on
 " Maximizer
 let g:maximizer_set_default_mapping = 0
 nnoremap <C-W><C-Z> :MaximizerToggle<CR>
-
-
-" EasyBuffer
-let g:easybuffer_chars = ['a','o','e','u','i','d','h','t','n','s']
-let g:easybuffer_toggle_position = "HorizontalBelow"
-nnoremap <C-b> :EasyBufferToggle<CR>
 
 
 " Synastic

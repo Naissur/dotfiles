@@ -32,9 +32,9 @@ Plugin 'jceb/vim-orgmode'
 Plugin 'tpope/vim-speeddating'
 
 " Snippets
-Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'tomtom/tlib_vim'
-Plugin 'garbas/vim-snipmate'
+" Plugin 'MarcWeber/vim-addon-mw-utils'
+" Plugin 'tomtom/tlib_vim'
+" Plugin 'garbas/vim-snipmate'
 
 " Syntax
 Plugin 'othree/yajs.vim'

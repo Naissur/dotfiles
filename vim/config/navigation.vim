@@ -10,9 +10,9 @@ nnoremap tk  :tabprev<CR>
 nnoremap tq  :tabclose<CR>
 
 " splits
-set winheight=20
-set winminheight=3
-set winminwidth=20
+" set winheight=20
+" set winminheight=3
+" set winminwidth=20
 
 set splitbelow
 set splitright

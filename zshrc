@@ -2,7 +2,7 @@
   export ZSH=~/.oh-my-zsh
 
 
-CASE_SENSITIVE="true"
+# CASE_SENSITIVE="true"
 HYPHEN_INSENSITIVE="true"
 DISABLE_AUTO_TITLE="true"
 
@@ -19,6 +19,7 @@ export EDITOR='vim'
 
 
 # Pure theme
+ZSH_THEME="pure"
 autoload -U promptinit && promptinit
 prompt pure
 
@@ -35,7 +36,7 @@ bindkey '^N' down-history
 bindkey '^?' backward-delete-char
 bindkey '^h' backward-delete-char
 
-# ctrl-w removed word backwards
+# ctrl-w removes word backwards
 bindkey '^w' backward-kill-word
 
 # ctrl-r starts searching history backward
@@ -47,3 +48,10 @@ export NVM_DIR="/home/naissur/.nvm"
 
 # tmux 256 colors
 export TERM="xterm-256color"
+
+# start base16 shell
+BASE16_SHELL=$HOME/.config/base16-shell/
+[ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
+
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

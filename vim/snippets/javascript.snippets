@@ -125,9 +125,9 @@ snippet {
 snippet log
 	console.log(${1});
 snippet gencomp
-	import React, {createClass} from 'react';
+	import React, {} from 'react';
 
-	export default createClass({
+	export default class ${1} extends Component {
 		render(){
 			return (
 				<div>
@@ -135,7 +135,7 @@ snippet gencomp
 				</div>
 			);
 		}
-	});
+	};
 snippet ajax
 	$.ajax({
 	    url: ${1},

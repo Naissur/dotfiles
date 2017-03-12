@@ -20,6 +20,9 @@ set splitright
 map + <C-W>+
 map - <C-W>-
 
+set splitbelow
+set splitright
+
 " open a new split
 " nnoremap <leader>w <C-w>s
 " nnoremap <leader>W <C-w>v
@@ -29,5 +32,12 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
-
 nmap <BS> <C-^>
+
+" fast resizing
+nnoremap <silent> + :exe "resize " . (winheight(0) * 4/3 + 1)<CR>
+nnoremap <silent> - :exe "resize " . (winheight(0) * 3/4)<CR>
+
+nnoremap <silent> <localleader>> :exe "vertical resize " . (winwidth(0) * 4/3 + 1)<CR>
+nnoremap <silent> <localleader>< :exe "vertical resize " . (winwidth(0) * 3/4 + 1)<CR>
+

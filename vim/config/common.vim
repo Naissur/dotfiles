@@ -164,3 +164,5 @@ set completeopt=longest,menuone
 
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
+nmap <localleader>id :pu=strftime('%c')<CR>
+

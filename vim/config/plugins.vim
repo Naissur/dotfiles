@@ -124,7 +124,7 @@ let g:ctrlp_extensions = ['tag', 'quickfix']
 " EasyAlign
 
 vmap <Enter> <Plug>(EasyAlign)
-
+vmap ga :EasyAlign<CR>
 
 " NERDTree
 function! ToggleNERDTreeFind()

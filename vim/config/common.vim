@@ -152,6 +152,7 @@ vnoremap <silent> # :<C-U>
 
 source ~/.vim/config/status.vim
 
+<<<<<<< 3d1548563dae04127feb8712f1226f13156f52f7
 " moving lines
 nnoremap mj :m .+1<CR>==
 nnoremap mk :m .-2<CR>==
@@ -165,4 +166,3 @@ set completeopt=longest,menuone
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
 nmap <localleader>id :pu=strftime('%c')<CR>
-

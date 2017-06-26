@@ -50,7 +50,6 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'maxmellon/vim-jsx-pretty'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'alvan/vim-closetag'
-Plugin 'ternjs/tern_for_vim'
 
 " Clojure
 Plugin 'guns/vim-sexp'

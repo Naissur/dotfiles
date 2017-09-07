@@ -50,13 +50,14 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'maxmellon/vim-jsx-pretty'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'alvan/vim-closetag'
+Plugin 'thinca/vim-localrc'
 
 " Clojure
-Plugin 'guns/vim-sexp'
-Plugin 'tpope/vim-sexp-mappings-for-regular-people'
-Plugin 'kien/rainbow_parentheses.vim'
-Plugin 'tpope/vim-fireplace'                         " https://gist.github.com/malyn/646e291d01101dcc8b48 - patch for firwheel repl
-Plugin 'Deraen/vim-cider'
+" Plugin 'guns/vim-sexp'
+" Plugin 'tpope/vim-sexp-mappings-for-regular-people'
+" Plugin 'kien/rainbow_parentheses.vim'
+" Plugin 'tpope/vim-fireplace'                         " https://gist.github.com/malyn/646e291d01101dcc8b48 - patch for firwheel repl
+" Plugin 'Deraen/vim-cider'
 
 call vundle#end()            " required
 
@@ -75,7 +76,12 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_loc_list_height = 4
 
 let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_javascript_eslint_exec = 'eslint_d'
+let g:syntastic_javascript_eslint_exec = 'eslint'
+
+" Point syntastic checker at locally installed `standard` if it exists.
+if executable('node_modules/.bin/eslint')
+  let g:syntastic_javascript_eslint_exec = 'node_modules/.bin/eslint'
+endif
 
 let g:syntastic_typescript_checkers = ['tslint']
 
@@ -93,22 +99,17 @@ hi SyntasticErrorSign ctermbg=red ctermfg=21
 
 
 " Ctrl-P
-let g:ctrlp_root_markers = ['package.json', '.gitignore', 'README.md']
-let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard', 'find %s -type f']
+let g:ctrlp_root_markers = ['.gitignore', 'README.md']
 " let g:ctrlp_open_new_file = 'r'
 let g:ctrlp_reuse_window  = 'startify'
-
-
-
-
-
-" NERDTree
-nnoremap <C-n> :NERDTreeFind<CR>
 
 let g:ctrlp_working_path_mode = 'ra'
-let g:ctrlp_root_markers = ['package.json', '.gitignore']
+let g:ctrlp_extensions = ['tag', 'quickfix']
+
+" let g:ctrlp_root_markers = ['package.json', '.gitignore']
 " let g:ctrlp_open_new_file = 'r'
-let g:ctrlp_reuse_window  = 'startify'
+
+" let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard', 'find %s -type f']
 
 if executable('ag')
   " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
@@ -117,7 +118,13 @@ else
   let g:ctrlp_user_command = ['.git/', 'cd %s && git ls-files . -oc --exclude-standard', 'find %s -type f']
 endif
 
-let g:ctrlp_extensions = ['tag', 'quickfix']
+
+
+
+
+" NERDTree
+nnoremap <C-n> :NERDTreeFind<CR>
+
 
 
 " EasyAlign
@@ -150,10 +157,10 @@ set hidden
 nmap <localleader>bn :enew<cr>
 
 " Rainbow parenthesis
-au VimEnter * RainbowParenthesesToggle
-au Syntax * RainbowParenthesesLoadRound
-au Syntax * RainbowParenthesesLoadSquare
-au Syntax * RainbowParenthesesLoadBraces
+" au VimEnter * RainbowParenthesesToggle
+" au Syntax * RainbowParenthesesLoadRound
+" au Syntax * RainbowParenthesesLoadSquare
+" au Syntax * RainbowParenthesesLoadBraces
 
 let g:rbpt_colorpairs = [
     \ ['cyan',    'RoyalBlue3'],

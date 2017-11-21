@@ -11,7 +11,10 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 " Common
-Plugin 'scrooloose/syntastic'
+
+if !has('nvim')
+  Plugin 'scrooloose/syntastic'
+endif
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround.git'
 Plugin 'michaeljsmith/vim-indent-object'

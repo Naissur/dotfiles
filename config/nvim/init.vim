@@ -4,6 +4,15 @@ source ~/.vimrc
 
 Plugin 'w0rp/ale'
 
+let g:ale_sign_column_always = 1
+nmap <localleader>f <Plug>(ale_fix)
+
+let g:ale_fixers = {
+\   'javascript': [
+\       'eslint',
+\   ],
+\}
+
 " Plugin 'Shougo/deoplete.nvim'
 " Plugin 'carlitux/deoplete-ternjs'
 " Plugin 'ternjs/tern_for_vim', { 'do': 'npm install && npm install -g tern' }

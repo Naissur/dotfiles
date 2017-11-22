@@ -5,7 +5,6 @@ source ~/.vimrc
 Plugin 'w0rp/ale'
 
 let g:ale_sign_column_always = 1
-let g:ale_set_quickfix = 1
 let g:ale_lint_on_save = 1
 nmap <localleader>f <Plug>(ale_fix)
 
@@ -14,14 +13,6 @@ let g:ale_fixers = {
 \       'eslint',
 \   ],
 \}
-
-Plugin 'Shougo/deoplete.nvim'
-Plugin 'carlitux/deoplete-ternjs'
-Plugin 'ternjs/tern_for_vim', { 'do': 'npm install && npm install -g tern' }
-
-let g:deoplete#enable_at_startup = 1
-nnoremap gd :TernDef<CR>
-
 
 " Plugin 'roxma/nvim-completion-manager'
 " Plugin 'autozimu/LanguageClient-neovim'

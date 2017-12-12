@@ -61,7 +61,7 @@ function! ToggleCollapsed()
   endif
 endf
 
-nmap <silent> <localleader>w :call ToggleCollapsed()<CR>
+nmap <silent> <localleader>v :call ToggleCollapsed()<CR>
 
 " hi Normal term=none ctermbg=black ctermfg=231 guifg=#FFFFFF guibg=black
 " au VimEnter * highlight Folded      ctermbg=darkgrey

@@ -2,7 +2,6 @@
 " 256 terminal colors
 set t_Co=256
 
-set relativenumber
 set numberwidth=10
 set foldcolumn=12
 
@@ -38,7 +37,7 @@ set background=dark
 colorscheme base16-default-dark
 
 " number column
-set relativenumber
+" set relativenumber
 set number
 
 " collapse / expand left gutter

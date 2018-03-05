@@ -8,6 +8,7 @@ filetype off                  " required
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
+
 Plugin 'VundleVim/Vundle.vim'
 
 " Common
@@ -19,7 +20,7 @@ Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround.git'
 Plugin 'michaeljsmith/vim-indent-object'
 
-Plugin 'jiangmiao/auto-pairs'
+" Plugin 'jiangmiao/auto-pairs'
 Plugin 'junegunn/vim-easy-align'
 Plugin 'majutsushi/tagbar'
 Plugin 'tpope/vim-unimpaired'
@@ -56,11 +57,11 @@ Plugin 'alvan/vim-closetag'
 Plugin 'thinca/vim-localrc'
 
 " Clojure
-" Plugin 'guns/vim-sexp'
-" Plugin 'tpope/vim-sexp-mappings-for-regular-people'
-" Plugin 'kien/rainbow_parentheses.vim'
-" Plugin 'tpope/vim-fireplace'                         " https://gist.github.com/malyn/646e291d01101dcc8b48 - patch for firwheel repl
-" Plugin 'Deraen/vim-cider'
+Plugin 'guns/vim-sexp'
+Plugin 'tpope/vim-sexp-mappings-for-regular-people'
+Plugin 'kien/rainbow_parentheses.vim'
+Plugin 'tpope/vim-fireplace'                         " https://gist.github.com/malyn/646e291d01101dcc8b48 - patch for firwheel repl
+Plugin 'Deraen/vim-cider'
 
 call vundle#end()            " required
 
@@ -121,6 +122,7 @@ else
   let g:ctrlp_user_command = ['.git/', 'cd %s && git ls-files . -oc --exclude-standard', 'find %s -type f']
 endif
 
+let g:ctrlp_open_new_file = 'h'
 
 
 
@@ -216,4 +218,11 @@ let g:mta_filetypes = {
 
 let g:AutoPairsMultilineClose = 0
 
+nmap <silent> <localleader>w :w<CR>
+
+
+" sexp
+let g:sexp_mappings = {
+  \ 'sexp_round_head_wrap_element': ''
+  \}
 

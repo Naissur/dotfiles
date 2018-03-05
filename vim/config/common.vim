@@ -117,6 +117,8 @@ set so=6
 map <ScrollWheelUp> <C-Y>
 map <ScrollWheelDown> <C-E>
 
+" mouse
+set mouse=a
 
 " avoid updating the screen before commands are completed
 set lazyredraw
@@ -171,4 +173,5 @@ inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 nmap <localleader>id :pu=strftime('%c')<CR>
 
 
-nmap <silent> <localleader>w :w<CR>
+" relative numbering
+set relativenumber

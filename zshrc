@@ -8,7 +8,10 @@ set completion-ignore-case on
 HYPHEN_INSENSITIVE="true"
 DISABLE_AUTO_TITLE="true"
 
-plugins=(git vi-mode)
+plugins=(
+  git vi-mode
+  yarn-autocompletions
+)
 
 
 # Go

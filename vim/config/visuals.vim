@@ -11,9 +11,12 @@ set background=dark
 colorscheme base16-default-dark
 
 
-highlight Normal ctermbg=NONE
-highlight nonText ctermbg=NONE
-highlight FoldColumn  ctermbg=NONE   ctermfg=NONE
+hi Normal ctermbg=NONE
+hi nonText ctermbg=NONE
+hi FoldColumn  ctermbg=NONE   ctermfg=NONE
+hi link jsClassProperty jsClassFuncName
+hi link jsDestructuringAssignment Noise
+
 " highlight LineNr cterm=none ctermbg=NONE   ctermfg=237
 " highlight CursorLineNr cterm=none ctermbg=NONE   ctermfg=252
 " highlight Search      cterm=inverse     ctermbg=none   ctermfg=11

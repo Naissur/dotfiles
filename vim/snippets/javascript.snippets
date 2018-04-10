@@ -93,12 +93,14 @@ snippet rcompp
 	>
 		${4}
 	</$1>
+snippet div
+	<div>
+	</div>
 snippet divc
 	<div className=${1}>
-		${2}
 	</div>
 snippet rcompc
-	export class ${1:Item} extends Component {
+	export default class ${1:Item} extends Component {
 		render() {
 			return (
 				<${2:div}>
@@ -123,17 +125,21 @@ snippet {
 snippet log
 	console.log(${1})
 snippet gencomp
-	import React, {} from 'react';
+	import React from 'react'
+	import PropTypes from 'prop-types'
+	import styles from './${1}.scss'
 
-	export default class ${1} extends Component {
-		render(){
+	export default class ${1} extends PureComponent {
+		static propTypes = {
+		}
+
+		render() {
 			return (
 				<div>
-					${1}
 				</div>
-			);
+			)
 		}
-	};
+	}
 snippet ajax
 	$.ajax({
 	    url: ${1},

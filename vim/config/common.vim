@@ -175,3 +175,8 @@ nmap <localleader>id :pu=strftime('%c')<CR>
 
 " relative numbering
 set relativenumber
+
+" view highlight group at cursor
+map <F9> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
+\ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
+\ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>

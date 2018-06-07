@@ -187,7 +187,7 @@ map <F9> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<
 syn keyword javaScriptCommentTodo      TODO FIXME REMOVEME XXX TBD contained
 
 
-" save session on ,w
+" save session on ,ss & restore on ,sr
 fu! SaveSess()
   execute 'mksession! ' . getcwd() . '/.session.vim'
 endfunction
@@ -205,8 +205,7 @@ fu! RestoreSess()
   endif
 endfunction
 
-autocmd VimLeave * call SaveSess()
-autocmd VimEnter * nested call RestoreSess()
-
-nmap <silent> <localleader>w :w<CR>:call SaveSess()<CR>
+nmap <silent> <localleader>w :w<CR>
+nmap <localleader>ss :call SaveSess()<CR>
+nmap <localleader>sr :call RestoreSess()<CR>
 

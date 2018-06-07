@@ -32,6 +32,8 @@ Plugin 'plasticboy/vim-markdown'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'szw/vim-maximizer'
 Plugin 'scrooloose/nerdtree'
+
+"Git
 Plugin 'airblade/vim-gitgutter'
 
 " Visuals
@@ -66,6 +68,7 @@ Plugin 'Deraen/vim-cider'
 call vundle#end()            " required
 
 filetype plugin indent on
+
 
 " Maximizer
 let g:maximizer_set_default_mapping = 0
@@ -125,19 +128,14 @@ endif
 let g:ctrlp_open_new_file = 'h'
 
 
+" EasyAlign
+vmap <Enter> <Plug>(EasyAlign)
+vmap ga :EasyAlign<CR>
 
 
 " NERDTree
 nnoremap <C-n> :NERDTreeFind<CR>
 
-
-
-" EasyAlign
-
-vmap <Enter> <Plug>(EasyAlign)
-vmap ga :EasyAlign<CR>
-
-" NERDTree
 function! ToggleNERDTreeFind()
     if g:NERDTree.IsOpen()
         execute ':NERDTreeClose'
@@ -182,6 +180,7 @@ let g:rbpt_colorpairs = [
     \ ['white',   'white'],
     \ ]
 
+
 " Vim-grep plugin
 
 nmap <leader>g <Plug>GrepOperatorOnCurrentDirectory
@@ -198,14 +197,18 @@ endif
 
 nmap <leader>t :TagbarToggle<CR>
 
+
 " golden ratio plugin
 let g:golden_ratio_exclude_nonmodifiable = 1
+
 
 " jsx end tags as begin
 hi link jsxCloseTag jsxTag
 
+
 " vim-closetag
 let g:closetag_filenames = "*.html,*.js,*.jsx"
+
 
 " vim-matchtagalways
 let g:mta_filetypes = {
@@ -217,8 +220,6 @@ let g:mta_filetypes = {
   \}
 
 let g:AutoPairsMultilineClose = 0
-
-nmap <silent> <localleader>w :w<CR>
 
 
 " sexp

@@ -123,6 +123,8 @@ set mouse=a
 " avoid updating the screen before commands are completed
 set lazyredraw
 
+" reduce updatetime to 400ms
+set updatetime=400
 
 " Set grep args
 if executable('ag')
@@ -180,3 +182,31 @@ set relativenumber
 map <F9> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
 \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
 \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
+
+" add REMOVEME javascript keyword
+syn keyword javaScriptCommentTodo      TODO FIXME REMOVEME XXX TBD contained
+
+
+" save session on ,w
+fu! SaveSess()
+  execute 'mksession! ' . getcwd() . '/.session.vim'
+endfunction
+
+fu! RestoreSess()
+  if filereadable(getcwd() . '/.session.vim')
+    execute 'so ' . getcwd() . '/.session.vim'
+    if bufexists(1)
+      for l in range(1, bufnr('$'))
+        if bufwinnr(l) == -1
+          exec 'sbuffer ' . l
+        endif
+      endfor
+    endif
+  endif
+endfunction
+
+autocmd VimLeave * call SaveSess()
+autocmd VimEnter * nested call RestoreSess()
+
+nmap <silent> <localleader>w :w<CR>:call SaveSess()<CR>
+

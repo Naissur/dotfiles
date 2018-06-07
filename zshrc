@@ -28,7 +28,7 @@ export EDITOR='nvim'
 
 
 # Pure theme
-ZSH_THEME="pure"
+ZSH_THEME="refined"
 autoload -U promptinit && promptinit
 prompt pure
 
@@ -73,6 +73,7 @@ then
 fi
 
 alias gst="git status --short"
+alias gcor="git for-each-ref refs/heads | cut -d/ -f3- | fzf | xargs git checkout"
 
 export PYTHONSTARTUP=~/.pythonrc
 
@@ -81,7 +82,6 @@ export FZF_DEFAULT_OPTS="
   --color fg:-1,bg:-1,hl:16,fg+:7,bg+:-1,hl+:16
   --color info:19,prompt:19,pointer:17,marker:16,spinner:17
   --margin 40%,0,0,0
-  --preview=\"head -$LINES {} 2> /dev/null || tree -C {} || echo {}\"
 "
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -154,3 +154,6 @@ unalias grv
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 source /Users/johnblue/.dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# Autojump
+[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh

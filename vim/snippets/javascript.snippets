@@ -123,19 +123,23 @@ snippet {
 		${1}
 	}
 snippet log
+	// TODO REMOVEME
 	console.log(${1})
 snippet gencomp
 	import React from 'react'
 	import PropTypes from 'prop-types'
-	import styles from './${1}.scss'
+	import styles from './${1:ComponentName}.scss'
 
-	export default class ${1} extends PureComponent {
+	const { any } = PropTypes
+
+	export default class $1 extends React.PureComponent {
 		static propTypes = {
+			any,
 		}
 
 		render() {
 			return (
-				<div>
+				<div className={ styles.root }>
 				</div>
 			)
 		}
@@ -167,3 +171,5 @@ snippet time
 	console.timeEnd($1)
 snippet imp
 	import ${1} from '${2}'
+snippet rm
+	// TODO REMOVEME

@@ -40,8 +40,11 @@ set suffixesadd+=.js,.ts,.tsx
 set wildmenu
 set wildignorecase
 
-" no current line highlight
+" no cursor line number highlight
 hi CursorLineNr none
+
+" hightlight cursorline
+set cursorline
 
 " mark whitespace
 set list

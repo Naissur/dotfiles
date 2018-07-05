@@ -14,6 +14,9 @@ let g:ale_fixers = {
 \   ],
 \}
 
+let g:python2_host_prog = '/usr/local/bin/python'
+let g:python3_host_prog = '/usr/local/bin/python3'
+
 " Plugin 'roxma/nvim-completion-manager'
 " Plugin 'autozimu/LanguageClient-neovim'
 " Plugin 'roxma/nvim-cm-tern'

@@ -57,6 +57,10 @@ Plugin 'maxmellon/vim-jsx-pretty'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'alvan/vim-closetag'
 Plugin 'thinca/vim-localrc'
+Plugin 'wavded/vim-stylus'
+
+" Python
+Plugin 'vim-scripts/indentpython.vim'
 
 " Clojure
 Plugin 'guns/vim-sexp'
@@ -227,3 +231,14 @@ let g:sexp_mappings = {
   \ 'sexp_round_head_wrap_element': ''
   \}
 
+
+" ALE
+
+let g:ale_fixers = {
+\   'javascript': [
+\       'eslint',
+\   ],
+\   'python': [
+\       'trim_whitespace',
+\   ],
+\}

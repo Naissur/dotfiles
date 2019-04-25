@@ -212,3 +212,6 @@ nmap <silent> <localleader>w :w<CR>
 nmap <localleader>ss :call SaveSess()<CR>
 nmap <localleader>sr :call RestoreSess()<CR>
 
+nnoremap <silent> * :let @/='\<'.expand('<cword>').'\>'<CR>:set hls<CR>
+
+autocmd FileType stylus setlocal noexpandtab

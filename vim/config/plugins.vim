@@ -58,6 +58,7 @@ Plugin 'leafgarland/typescript-vim'
 Plugin 'alvan/vim-closetag'
 Plugin 'thinca/vim-localrc'
 Plugin 'wavded/vim-stylus'
+Plugin 'tikhomirov/vim-glsl'
 
 " Python
 Plugin 'vim-scripts/indentpython.vim'
@@ -239,6 +240,7 @@ let g:ale_fixers = {
 \       'eslint',
 \   ],
 \   'python': [
-\       'trim_whitespace',
+\       'autopep8',
 \   ],
 \}
+

@@ -215,3 +215,6 @@ nmap <localleader>sr :call RestoreSess()<CR>
 nnoremap <silent> * :let @/='\<'.expand('<cword>').'\>'<CR>:set hls<CR>
 
 autocmd FileType stylus setlocal noexpandtab
+
+" neovim specific
+let g:python_recommended_style = 0

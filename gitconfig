@@ -1,5 +1,5 @@
-[core]
-	editor = nvim
+# [core]
+# 	editor = nvim
 [user]
 	name = Vlad Aituganov
 	email = vlad.aituganov@gmail.com

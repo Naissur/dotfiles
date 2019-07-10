@@ -21,7 +21,6 @@ DISABLE_AUTO_TITLE="true"
 
 plugins=(
   git vi-mode
-  yarn-autocompletions
 )
 
 
@@ -35,13 +34,16 @@ export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
 export LANG=en_US.UTF-8
+export VISUAL='nvim'
 export EDITOR='nvim'
 
 
 # Pure theme
 ZSH_THEME="refined"
+fpath+=('/home/naissur/.nvm/versions/node/v12.6.0/lib/node_modules/pure-prompt/functions')
 autoload -U promptinit && promptinit
 prompt pure
+
 
 # vi mode delay
 export KEYTIMEOUT=1

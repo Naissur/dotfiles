@@ -172,3 +172,5 @@ source ~/.dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 
 export NEO4J_HOME="$HOME/.neo4j"
+
+export PATH="$HOME/anaconda3/bin:$PATH"

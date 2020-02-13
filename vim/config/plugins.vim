@@ -27,6 +27,7 @@ Plugin 'tpope/vim-unimpaired'
 Plugin 'tpope/vim-projectionist'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
+Plugin 'scrooloose/nerdcommenter'
 
 " Layout and navigation
 Plugin 'ctrlpvim/ctrlp.vim'
@@ -62,6 +63,7 @@ Plugin 'tikhomirov/vim-glsl'
 
 " Python
 Plugin 'vim-scripts/indentpython.vim'
+Plugin 'davidhalter/jedi-vim'
 
 " Clojure
 Plugin 'guns/vim-sexp'
@@ -235,6 +237,10 @@ let g:sexp_mappings = {
 
 " ALE
 
+let g:ale_linters = {
+\   'python': ['flake8']
+\}
+
 let g:ale_fixers = {
 \   'javascript': [
 \       'eslint',
@@ -244,3 +250,18 @@ let g:ale_fixers = {
 \   ],
 \}
 
+let g:NERDSpaceDelims=1
+
+let g:NERDDefaultAlign = 'left'
+
+function! LinterStatus() abort
+    let l:counts = ale#statusline#Count(bufnr(''))
+    let l:all_errors = l:counts.error + l:counts.style_error
+    let l:all_non_errors = l:counts.total - l:all_errors
+
+    return l:counts.total == 0 ? 'OK' : printf(
+        \   '[%d ERRORS]',
+        \   all_errors
+        \)
+endfunction
+set statusline=\ %{LinterStatus()}\ statusline

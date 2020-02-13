@@ -2,17 +2,11 @@ set runtimepath^=~/.vim runtimepath+=~/.vim/after
 let &packpath = &runtimepath
 source ~/.vimrc
 
-Plugin 'w0rp/ale'
+Plugin 'dense-analysis/ale'
 
 let g:ale_sign_column_always = 1
 let g:ale_lint_on_save = 1
 nmap <localleader>f <Plug>(ale_fix)
-
-let g:ale_fixers = {
-\   'javascript': [
-\       'eslint',
-\   ],
-\}
 
 let g:python2_host_prog = '/usr/local/bin/python'
 let g:python3_host_prog = '/usr/local/bin/python3'

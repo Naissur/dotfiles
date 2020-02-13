@@ -174,3 +174,26 @@ source ~/.dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 export NEO4J_HOME="$HOME/.neo4j"
 
 export PATH="$HOME/anaconda3/bin:$PATH"
+
+source ~/.kubectl_completion.sh
+
+# SWIG
+export PATH="/usr/local/opt/swig@3/bin:$PATH"
+
+# Anaconda
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/johnblue/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/johnblue/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/johnblue/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/johnblue/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+

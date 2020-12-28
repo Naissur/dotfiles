@@ -123,6 +123,9 @@ map <ScrollWheelDown> <C-E>
 " mouse
 set mouse=a
 
+" clipboard
+set clipboard+=unnamedplus
+
 " avoid updating the screen before commands are completed
 set lazyredraw
 

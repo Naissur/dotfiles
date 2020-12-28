@@ -2,7 +2,7 @@
 # 	editor = nvim
 [user]
 	name = Vlad Aituganov
-	email = vlad.aituganov@gmail.com
+	email = v.aytuganov@qiwi.com
 [alias]
 	co = checkout
 	br = branch
@@ -22,3 +22,8 @@
 # 	fetch = +refs/heads/*:refs/remotes/origin/*
 [push]
 	default = current
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true

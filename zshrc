@@ -197,3 +197,7 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+conda deactivate
+
+alias vim="nvim"
+export PATH="/usr/local/opt/openjdk@11/bin:$PATH"

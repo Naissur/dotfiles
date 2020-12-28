@@ -34,7 +34,7 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'szw/vim-maximizer'
 Plugin 'scrooloose/nerdtree'
 
-"Git
+" Git
 Plugin 'airblade/vim-gitgutter'
 
 " Visuals
@@ -71,6 +71,9 @@ Plugin 'tpope/vim-sexp-mappings-for-regular-people'
 Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'tpope/vim-fireplace'                         " https://gist.github.com/malyn/646e291d01101dcc8b48 - patch for firwheel repl
 Plugin 'Deraen/vim-cider'
+
+" Firenvim
+Plugin 'glacambre/firenvim'
 
 call vundle#end()            " required
 
@@ -264,4 +267,23 @@ function! LinterStatus() abort
         \   all_errors
         \)
 endfunction
-set statusline=\ %{LinterStatus()}\ statusline
+" set statusline=\ %{LinterStatus()}\ +%{&statusline}
+
+
+
+" Firenvim
+
+let g:firenvim_config = { 
+    \ 'globalSettings': {
+        \ 'alt': 'all',
+    \  },
+    \ 'localSettings': {
+        \ '.*': {
+            \ 'cmdline': 'neovim',
+            \ 'content': 'text',
+            \ 'priority': 0,
+            \ 'selector': 'textarea:not([readonly]), div[role="textbox"]',
+            \ 'takeover': 'never',
+        \ },
+    \ }
+\ }
